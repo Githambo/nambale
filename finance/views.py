@@ -97,7 +97,7 @@ class ReceiptCreateView(LoginRequiredMixin, CreateView):
         invoice = Invoice.objects.get(pk=self.request.GET['invoice'])
         obj.invoice = invoice
         obj.save()
-        return redirect('invoice-list')
+        return redirect('finance:invoice-list')
 
     def get_context_data(self, **kwargs):
         context = super(ReceiptCreateView, self).get_context_data(**kwargs)
